@@ -1,0 +1,275 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "AI",
+"language": "GDScript",
+"path": "res://core/systems/ai/ai.gd"
+}, {
+"base": "AI",
+"class": "AIActions",
+"language": "GDScript",
+"path": "res://core/systems/ai/aiactions.gd"
+}, {
+"base": "System",
+"class": "ActionCtl",
+"language": "GDScript",
+"path": "res://core/systems/controls/action.gd"
+}, {
+"base": "AI",
+"class": "AlertAI",
+"language": "GDScript",
+"path": "res://core/systems/ai/alert.gd"
+}, {
+"base": "System",
+"class": "Analyser",
+"language": "GDScript",
+"path": "res://core/systems/analyser.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://core/modules/character/character.gd"
+}, {
+"base": "System",
+"class": "CharacterCtl",
+"language": "GDScript",
+"path": "res://core/systems/controls/character.gd"
+}, {
+"base": "System",
+"class": "CharacterSys",
+"language": "GDScript",
+"path": "res://core/systems/physics_process/character.gd"
+}, {
+"base": "Node",
+"class": "Game",
+"language": "GDScript",
+"path": "res://core/game/game.gd"
+}, {
+"base": "Node",
+"class": "GameData",
+"language": "GDScript",
+"path": "res://core/game/data.gd"
+}, {
+"base": "InNodeSystem",
+"class": "InCharacterSystem",
+"language": "GDScript",
+"path": "res://core/modules/character/system.gd"
+}, {
+"base": "Node",
+"class": "InNodeSystem",
+"language": "GDScript",
+"path": "res://core/systems/in_object_system.gd"
+}, {
+"base": "InNodeSystem",
+"class": "InWeaponSystem",
+"language": "GDScript",
+"path": "res://core/modules/weapon/system.gd"
+}, {
+"base": "System",
+"class": "LookCtl",
+"language": "GDScript",
+"path": "res://core/systems/controls/look/look.gd"
+}, {
+"base": "Analyser",
+"class": "LookCtlAnalyser",
+"language": "GDScript",
+"path": "res://core/systems/controls/look/analyser.gd"
+}, {
+"base": "AIActions",
+"class": "MoveActAI",
+"language": "GDScript",
+"path": "res://core/systems/ai/move/move.gd"
+}, {
+"base": "System",
+"class": "MoveCtl",
+"language": "GDScript",
+"path": "res://core/systems/controls/move/move.gd"
+}, {
+"base": "Analyser",
+"class": "MoveCtlAnalyser",
+"language": "GDScript",
+"path": "res://core/systems/controls/move/analyser.gd"
+}, {
+"base": "AI",
+"class": "NeutralExplorationAI",
+"language": "GDScript",
+"path": "res://core/systems/ai/neutral_exploration.gd"
+}, {
+"base": "System",
+"class": "NodeCtl",
+"language": "GDScript",
+"path": "res://core/systems/controls/node.gd"
+}, {
+"base": "System",
+"class": "StartSys",
+"language": "GDScript",
+"path": "res://core/systems/ready/start.gd"
+}, {
+"base": "Object",
+"class": "System",
+"language": "GDScript",
+"path": "res://core/systems/system.gd"
+}, {
+"base": "AI",
+"class": "TargetingAI",
+"language": "GDScript",
+"path": "res://core/systems/ai/targeting.gd"
+}, {
+"base": "Node2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://core/modules/weapon/weapon.gd"
+}, {
+"base": "System",
+"class": "WeaponCtl",
+"language": "GDScript",
+"path": "res://core/systems/controls/weapon.gd"
+}, {
+"base": "Node2D",
+"class": "WorldScene",
+"language": "GDScript",
+"path": "res://core/objects/world.gd"
+} ]
+_global_script_class_icons={
+"AI": "",
+"AIActions": "",
+"ActionCtl": "",
+"AlertAI": "",
+"Analyser": "",
+"Character": "",
+"CharacterCtl": "",
+"CharacterSys": "",
+"Game": "",
+"GameData": "",
+"InCharacterSystem": "",
+"InNodeSystem": "",
+"InWeaponSystem": "",
+"LookCtl": "",
+"LookCtlAnalyser": "",
+"MoveActAI": "",
+"MoveCtl": "",
+"MoveCtlAnalyser": "",
+"NeutralExplorationAI": "",
+"NodeCtl": "",
+"StartSys": "",
+"System": "",
+"TargetingAI": "",
+"Weapon": "",
+"WeaponCtl": "",
+"WorldScene": ""
+}
+
+[application]
+
+config/name="AZDARA"
+run/main_scene="res://core/game/game.tscn"
+
+[autoload]
+
+PlayerInput="*res://core/systems/singletons/player_input.gd"
+Temp="*res://core/systems/singletons/temp.gd"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
+
+[input]
+
+player0_move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":72,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_look_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_look_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_look_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_look_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_action_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+player0_action_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+player0_dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player0_slow_walk={
+"deadzone": 0.5,
+"events": [  ]
+}
+player0_switch_state={
+"deadzone": 0.5,
+"events": [  ]
+}
+player0_pick_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+player0_camera_zoom_in={
+"deadzone": 0.5,
+"events": [  ]
+}
+player0_camera_zoom_out={
+"deadzone": 0.5,
+"events": [  ]
+}
+
+[physics]
+
+2d/default_gravity=0
+2d/default_gravity_vector=Vector2( 0, 0 )
+3d/default_gravity=0.0
+3d/default_gravity_vector=Vector3( 0, 0, 0 )
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0, 0, 0, 1 )
